@@ -1,0 +1,120 @@
+create_feed_plan:
+  name: 创建喂食计划
+  description: 为一台 CloudPets 喂食器创建定时计划。
+  fields:
+    device_id:
+      name: 设备
+      description: CloudPets 喂食器。
+      required: true
+      selector:
+        device:
+          integration: cloudpets
+    name:
+      name: 名称
+      description: 计划名称。
+      required: true
+      example: 早餐
+      selector:
+        text:
+    time:
+      name: 时间
+      description: 出粮时间。
+      required: true
+      example: "08:00"
+      selector:
+        time:
+    servings:
+      name: 份量
+      description: 每次出粮份量，范围 0.5–20，步长 0.5。
+      required: true
+      example: 1
+      selector:
+        number:
+          min: 0.5
+          max: 20
+          step: 0.5
+          unit_of_measurement: 份
+    days:
+      name: 星期
+      description: 逗号分隔的星期，1=周一，7=周日。
+      required: false
+      example: "1,2,3,4,5"
+      selector:
+        text:
+    enabled:
+      name: 启用
+      description: 是否启用该计划。
+      required: false
+      default: true
+      selector:
+        boolean:
+
+update_feed_plan:
+  name: 更新喂食计划
+  description: 修改一条已有的 CloudPets 喂食计划。
+  fields:
+    device_id:
+      name: 设备
+      description: CloudPets 喂食器。
+      required: true
+      selector:
+        device:
+          integration: cloudpets
+    plan_id:
+      name: 计划 ID
+      description: 计划的唯一标识。
+      required: true
+      selector:
+        text:
+    name:
+      name: 名称
+      description: 计划名称。
+      required: true
+      selector:
+        text:
+    time:
+      name: 时间
+      description: 出粮时间。
+      required: true
+      selector:
+        time:
+    servings:
+      name: 份量
+      description: 每次出粮份量，范围 0.5–20，步长 0.5。
+      required: true
+      selector:
+        number:
+          min: 0.5
+          max: 20
+          step: 0.5
+          unit_of_measurement: 份
+    days:
+      name: 星期
+      description: 逗号分隔的星期，1=周一，7=周日。
+      required: true
+      selector:
+        text:
+    enabled:
+      name: 启用
+      description: 是否启用该计划。
+      required: true
+      selector:
+        boolean:
+
+delete_feed_plan:
+  name: 删除喂食计划
+  description: 删除一条 CloudPets 喂食计划。
+  fields:
+    device_id:
+      name: 设备
+      description: CloudPets 喂食器。
+      required: true
+      selector:
+        device:
+          integration: cloudpets
+    plan_id:
+      name: 计划 ID
+      description: 计划的唯一标识。
+      required: true
+      selector:
+        text:

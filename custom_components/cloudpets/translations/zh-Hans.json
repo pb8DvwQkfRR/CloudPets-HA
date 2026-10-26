@@ -1,0 +1,157 @@
+{
+  "exceptions": {
+    "plan_not_found": {
+      "message": "找不到计划：{plan_id}"
+    }
+  },
+  "config": {
+    "step": {
+      "user": {
+        "title": "登录 CloudPets",
+        "description": "使用 CloudPets App 的账号和密码。",
+        "data": {
+          "username": "账号",
+          "password": "密码"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新登录 CloudPets",
+        "description": "账号 {username} 的登录已失效，请重新输入密码。",
+        "data": {
+          "password": "密码"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "账号或密码不正确",
+      "cannot_connect": "无法连接 CloudPets",
+      "no_devices": "这个账号下没有可用的喂食器",
+      "unknown": "CloudPets 返回了未知错误"
+    }
+  },
+  "options": {
+    "abort": {
+      "no_feeders": "这个账号下没有可用的喂食器",
+      "no_plans": "还没有喂食计划",
+      "plan_not_found": "计划不存在，可能已被删除"
+    },
+    "step": {
+      "init": {
+        "title": "CloudPets",
+        "menu_options": {
+          "manage_plans": "管理喂食计划",
+          "settings": "设置"
+        }
+      },
+      "manage_plans": {
+        "title": "管理喂食计划",
+        "description": "选择要执行的操作。计划列表可在选择和编辑时查看。",
+        "menu_options": {
+          "plan_overview": "查看全部计划",
+          "add_plan": "新建计划",
+          "edit_plan_select": "编辑计划",
+          "delete_plan_select": "删除计划"
+        }
+      },
+      "add_plan": {
+        "title": "新建喂食计划",
+        "description": "保存后会同步到 CloudPets 云端。",
+        "data": {
+          "device_id": "设备",
+          "name": "计划名称",
+          "time": "出粮时间",
+          "servings": "份量",
+          "days": "重复日期",
+          "enabled": "启用"
+        }
+      },
+      "edit_plan_select": {
+        "title": "选择要编辑的计划",
+        "data": {
+          "plan_key": "计划"
+        }
+      },
+      "edit_plan": {
+        "title": "编辑喂食计划",
+        "description": "保存后会同步到 CloudPets 云端。",
+        "data": {
+          "device_id": "设备",
+          "name": "计划名称",
+          "time": "出粮时间",
+          "servings": "份量",
+          "days": "重复日期",
+          "enabled": "启用"
+        }
+      },
+      "delete_plan_select": {
+        "title": "选择要删除的计划",
+        "description": "删除后无法撤销。",
+        "data": {
+          "plan_key": "计划"
+        }
+      },
+      "settings": {
+        "title": "CloudPets 设置",
+        "data": {
+          "scan_interval": "刷新间隔（秒）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "在线"
+      },
+      "desiccant_overdue": {
+        "name": "干燥剂已逾期"
+      }
+    },
+    "button": {
+      "feed_now": {
+        "name": "立即喂食"
+      },
+      "desiccant_reset": {
+        "name": "干燥剂已更换"
+      }
+    },
+    "number": {
+      "manual_feed_servings": {
+        "name": "手动喂食份量"
+      },
+      "desiccant_cycle": {
+        "name": "干燥剂更换周期"
+      }
+    },
+    "sensor": {
+      "battery": {
+        "name": "电量"
+      },
+      "food_level": {
+        "name": "粮仓"
+      },
+      "servings_today": {
+        "name": "今日出粮"
+      },
+      "status": {
+        "name": "状态"
+      },
+      "desiccant_remaining": {
+        "name": "干燥剂剩余天数"
+      },
+      "desiccant_due": {
+        "name": "干燥剂到期日"
+      }
+    },
+    "switch": {
+      "child_lock": {
+        "name": "童锁"
+      }
+    },
+    "time": {
+      "desiccant_reminder_time": {
+        "name": "干燥剂提醒时间"
+      }
+    }
+  }
+}

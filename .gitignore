@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+*.local
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+*.py[cod]
+tests/
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
